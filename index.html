@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nasratollah Rezai - Portfolio</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        :root {
+            --primary: #2563EB; /* Professional Blue */
+            --dark: #0F172A;
+            --light: #F8FAFC;
+            --gray: #64748B;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background: var(--light); color: var(--dark); line-height: 1.6; }
+
+        /* --- HERO SECTION --- */
+        header {
+            background: var(--dark);
+            color: white;
+            padding: 80px 20px;
+            text-align: center;
+            position: relative;
+        }
+
+        /* Language Switcher Style */
+        .lang-switch {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+        }
+        
+        .lang-btn {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: all 0.3s;
+        }
+
+        .lang-btn:hover {
+            background: var(--primary);
+            border-color: var(--primary);
+        }
+        
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 4px solid var(--primary);
+            object-fit: cover;
+            margin-bottom: 20px;
+            background-color: #334155; 
+        }
+
+        h1 { font-size: 2.5rem; margin-bottom: 10px; font-weight: 800; }
+        .subtitle { font-size: 1.2rem; color: #94A3B8; max-width: 600px; margin: 0 auto 30px; }
+        
+        .social-links a {
+            color: white;
+            font-size: 1.5rem;
+            margin: 0 10px;
+            transition: color 0.3s;
+        }
+        .social-links a:hover { color: var(--primary); }
+
+        /* --- PROJECTS GRID --- */
+        .container { max-width: 1200px; margin: 0 auto; padding: 60px 20px; }
+        .section-title { text-align: center; margin-bottom: 50px; font-size: 2rem; font-weight: 700; }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card:hover { transform: translateY(-10px); }
+
+        .card-header {
+            height: 160px;
+            background: #e2e8f0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: var(--primary);
+        }
+
+        .card-body { padding: 30px; flex: 1; display: flex; flex-direction: column; }
+        
+        .tags { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 15px; }
+        .tag {
+            font-size: 0.75rem;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 50px;
+            text-transform: uppercase;
+        }
+        .tag-mobile { background: #DBEAFE; color: #1E40AF; }
+        .tag-web { background: #DCFCE7; color: #166534; }
+        .tag-devops { background: #F3E8FF; color: #6B21A8; }
+
+        .card h3 { margin-bottom: 10px; font-size: 1.4rem; }
+        .card p { color: var(--gray); font-size: 0.95rem; margin-bottom: 20px; flex: 1; }
+
+        .btn {
+            display: inline-block;
+            text-decoration: none;
+            background: var(--dark);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 10px;
+            font-weight: 600;
+            text-align: center;
+            transition: background 0.3s;
+        }
+        .btn:hover { background: var(--primary); }
+
+        /* --- FOOTER --- */
+        footer { text-align: center; padding: 40px; color: var(--gray); font-size: 0.9rem; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="lang-switch">
+            <button class="lang-btn" onclick="toggleLanguage()">EN | FI</button>
+        </div>
+
+        <img src="nasratollahrezai.png" alt="Nasratollah Rezai" class="profile-img">
+        <h1>Nasratollah Rezai</h1>
+        <p class="subtitle" data-key="hero-subtitle">Full Stack Developer | Robotic Engineer | Tech Entrepreneur</p>
+        
+        <div class="social-links">
+            <a href="https://github.com/naaarezai"><i class="fab fa-github"></i></a>
+            <a href="https://fi.linkedin.com/in/nasratollahrezai"><i class="fab fa-linkedin"></i></a> 
+            <a href="mailto:nasratollah.rezai@gmail.com"><i class="fas fa-envelope"></i></a>
+        </div>
+    </header>
+
+    <div class="container">
+        <h2 class="section-title" data-key="section-title">Featured Projects</h2>
+        
+        <div class="grid">
+            
+            <div class="card">
+                <div class="card-header" style="background: #E8F5E9; color: #388E3C;">
+                    <i class="fas fa-leaf"></i>
+                </div>
+                <div class="card-body">
+                    <div class="tags">
+                        <span class="tag tag-mobile">Flutter</span>
+                        <span class="tag tag-mobile">Firebase</span>
+                    </div>
+                    <h3>NaapuriSapuska</h3>
+                    <p data-key="project-1-desc">A food sharing marketplace designed to reduce food waste. Allows users to list surplus food, chat securely, and view items on a real-time map. Complete ecosystem with notifications and geolocation.</p>
+                    <a href="https://naaarezai.github.io/naapurisapuska/#" target="_blank" class="btn" data-key="view-project">View Project <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header" style="background: #FFF7ED; color: #EA580C;">
+                    <i class="fas fa-taxi"></i>
+                </div>
+                <div class="card-body">
+                    <div class="tags">
+                        <span class="tag tag-mobile">Flutter</span>
+                        <span class="tag tag-mobile">Google Maps API</span>
+                    </div>
+                    <h3>Sido Taxi Platform</h3>
+                    <p data-key="project-2-desc">A comprehensive ride-hailing platform similar to Uber. Features include instant booking, live driver tracking, fare calculation, and secure in-app payments. Currently serving customers in Lahti.</p>
+                    <a href="https://sido.fi/fi/index.html" target="_blank" class="btn" data-key="view-project">View Project <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header" style="background: #F1F5F9; color: #475569;">
+                    <i class="fas fa-hard-hat"></i>
+                </div>
+                <div class="card-body">
+                    <div class="tags">
+                        <span class="tag tag-web">Web Development</span>
+                        <span class="tag tag-web">SEO</span>
+                    </div>
+                    <h3>Rakennustekniikka Rahimi</h3>
+                    <p data-key="project-3-desc">Corporate website for a construction engineering company. Built to be fast, responsive, and SEO-optimized to generate leads for renovation and building projects.</p>
+                    <a href="https://rakennustekniikkarahimi.fi/" target="_blank" class="btn" data-key="view-website">View Website <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header" style="background: #F8FAFC; color: #0082C9;">
+                    <i class="fas fa-server"></i>
+                </div>
+                <div class="card-body">
+                    <div class="tags">
+                        <span class="tag tag-devops">Ubuntu Server</span>
+                        <span class="tag tag-devops">Nextcloud</span>
+                    </div>
+                    <h3>Self-Hosted Private Cloud</h3>
+                    <p data-key="project-4-desc">A secure, cost-effective private cloud infrastructure running on a custom Ubuntu Server. Configured with Nextcloud for encrypted storage of documents, photos, and videos, bypassing commercial cloud costs.</p>
+                    <a href="http://cloud.sido.fi/" target="_blank" class="btn" data-key="access-portal">Access Portal <i class="fas fa-lock"></i></a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <footer>
+        <span data-key="footer-text">&copy; 2026 Nasratollah Rezai. Built with code & passion.</span>
+    </footer>
+
+    <script>
+        let currentLang = 'en';
+
+        const translations = {
+            'en': {
+                'hero-subtitle': 'Full Stack Developer | Construction Engineer | Tech Entrepreneur',
+                'section-title': 'Featured Projects',
+                'project-1-desc': 'A food sharing marketplace designed to reduce food waste. Allows users to list surplus food, chat securely, and view items on a real-time map. Complete ecosystem with notifications and geolocation.',
+                'project-2-desc': 'A comprehensive ride-hailing platform similar to Uber. Features include instant booking, live driver tracking, fare calculation, and secure in-app payments. Currently serving customers in Lahti.',
+                'project-3-desc': 'Corporate website for a construction engineering company. Built to be fast, responsive, and SEO-optimized to generate leads for renovation and building projects.',
+                'project-4-desc': 'A secure, cost-effective private cloud infrastructure running on a custom Ubuntu Server. Configured with Nextcloud for encrypted storage of documents, photos, and videos, bypassing commercial cloud costs.',
+                'view-project': 'View Project <i class="fas fa-arrow-right"></i>',
+                'view-website': 'View Website <i class="fas fa-arrow-right"></i>',
+                'access-portal': 'Access Portal <i class="fas fa-lock"></i>',
+                'footer-text': '&copy; 2026 Nasratollah Rezai. Built with code & passion.'
+            },
+            'fi': {
+                'hero-subtitle': 'Full Stack -kehittäjä | Robotiikka insinööri | Teknologia-alan yrittäjä',
+                'section-title': 'Valitut Projektit',
+                'project-1-desc': 'Ruuanjakamisalusta hävikkiruuan vähentämiseksi. Mahdollistaa ylimääräisen ruuan listaamisen, turvallisen chatin ja reaaliaikaisen karttanäkymän. Täydellinen ekosysteemi ilmoituksineen ja paikannuksineen.',
+                'project-2-desc': 'Kattava kyytipalvelualusta, joka vastaa Uberia. Ominaisuuksina välitön tilaus, kuljettajan seuranta livenä, hinta-arviot ja turvalliset sovelluksen sisäiset maksut. Palvelee tällä hetkellä Lahdessa.',
+                'project-3-desc': 'Rakennusinsinööritoimiston yrityssivut. Rakennettu nopeaksi, responsiiviseksi ja hakukoneoptimoiduksi (SEO) tuottamaan liidejä saneeraus- ja rakennusprojekteihin.',
+                'project-4-desc': 'Turvallinen ja kustannustehokas yksityinen pilvi-infrastruktuuri kustomoidulla Ubuntu-palvelimella. Konfiguroitu Nextcloudilla dokumenttien, kuvien ja videoiden salattuun tallennukseen, ohittaen kaupallisten pilvien kustannukset.',
+                'view-project': 'Katso projekti <i class="fas fa-arrow-right"></i>',
+                'view-website': 'Katso sivut <i class="fas fa-arrow-right"></i>',
+                'access-portal': 'Kirjaudu portaaliin <i class="fas fa-lock"></i>',
+                'footer-text': '&copy; 2026 Nasratollah Rezai. Rakennettu koodilla ja intohimolla.'
+            }
+        };
+
+        function toggleLanguage() {
+            currentLang = currentLang === 'en' ? 'fi' : 'en';
+            updateContent();
+        }
+
+        function updateContent() {
+            const elements = document.querySelectorAll('[data-key]');
+            elements.forEach(element => {
+                const key = element.getAttribute('data-key');
+                if (translations[currentLang][key]) {
+                    element.innerHTML = translations[currentLang][key];
+                }
+            });
+            document.documentElement.lang = currentLang;
+        }
+    </script>
+
+</body>
+</html>
